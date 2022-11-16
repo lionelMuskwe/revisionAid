@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light  p-3">
+    <a class="navbar-brand" href=" {% url 'home-page' %}">
+      <div class="p-2" style="background-color: rgb(227, 227, 39); font-size: 30px; border-radius: 10px; box-shadow: rgb(128, 11, 0) 3px 3px; color">
+        Revision Aid
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active" >
+          <a class="nav-link" href="https://wa.link/3n66lb"> <div class="nav-text">Contact</div></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{% url 'about-page' %}"><div class="nav-text">About</div></a>
+        </li>
+      </ul>
+    </div>
+  </nav>

@@ -1,0 +1,32 @@
+{% extends 'interface/base.html' %}
+
+{% block title %}
+    Home Page
+{% endblock title%}
+
+
+
+{% block body %}
+
+    <div class="row homepage-container">
+        <div class="col-sm-7">
+            <div class="row mb-4">
+                <div class="app-description">This <strong>revision aid</strong> is designed to help you easily revise
+                    some of the core concepts contained in the modules that you
+                    study. The interface allows you to maximise study time by employing an
+                    intuitive interface that promotes rapid revision through constant recollection .
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <a href="{% url 'subjects-page' %}">
+                <button class="btn-show-all-subjects btn btn-success">
+                    Show all subjects
+                </button>
+            </a>
+        </div>
+
+    </div>
+
+
+{% endblock body %}

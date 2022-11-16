@@ -1,0 +1,43 @@
+{% extends 'interface/base.html' %}
+
+{% block title %}
+    Home Page
+{% endblock title%}
+
+
+
+{% block body %}
+
+    <div class="">
+
+        <div class="homepage-image-container ">
+
+            <div class="title-subject">
+                Available Topics
+            </div>
+
+            {% for topic in topics %}
+                <a href=" {% url 'get-questions' topic.pk %}" class="topic-link">
+                    <div class="topic-container">
+                        <div class="subject-name ">
+                            {{ topic.name }}
+                        </div>
+                        <div class="subject-description">
+                            {{ topic.description }}
+                        </div>
+                    </div>
+                </a>
+
+            {% empty %}
+                <br><br><br>
+                <h1> No available topics </h1>
+
+
+            {% endfor %}
+
+            
+        </div>
+    </div>
+
+
+{% endblock body %}

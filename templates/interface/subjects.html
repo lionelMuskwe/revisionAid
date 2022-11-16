@@ -1,0 +1,35 @@
+{% extends 'interface/base.html' %}
+
+{% block title %}
+    Home Page
+{% endblock title%}
+
+
+
+{% block body %}
+
+    <div class="">
+
+        <div class="homepage-image-container ">
+
+            <div class="title-subject">
+                Available Subjects
+            </div>
+
+            {% for subject in subjects %}
+                <a href="{% url 'topics-page' subject.pk %}" class="subject-link">
+                    <div class="subject-container">
+                        <div class="subject-name">
+                            {{ subject.name }}
+                        </div>
+                        <div class="subject-description">
+                            {{ subject.description }}
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock body %}

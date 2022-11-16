@@ -1,0 +1,87 @@
+{% load static %}
+
+{% include "interface/navbar.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <!-- <link type="stylesheet" href=" {% static 'flip-card.css' %}"> -->
+    <link rel="stylesheet" href=" {% static 'css/flip-card.css' %} ">
+
+    <title>Flip Cards</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PNES6B00RW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-PNES6B00RW');
+    </script>
+
+    <style>
+        body {
+            padding: 20px;
+            background-image: url("https://wallpaper.dog/large/5470615.gif")
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 500px) {
+            body {
+                padding: 0px;
+                margin: 0px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="page-container" onclick="">
+        <div class="inner-page-container container" onclick="">
+            <div class="flip-card container" onclick="">
+                <div class="flip-card-inner" onclick="">
+                    <div class="flip-card-front">
+                        <div>
+                            <input type="text" id="question-heading" class="form-control btn-danger fs-4" disabled value="Question">
+                        </div>
+                        <div class="flip-card-body fs-5 align-items-center"  id="flip-card-question" class=" "  value=""> </div>
+                    </div>
+
+                    <div class="flip-card-back" onclick="">
+                        <div>
+                            <input type="text" id="answer-heading" class="form-control btn-success answer-text" disabled value="Answer">
+                        </div>
+                        <div class="flip-card-body fs-5 align-items-center" id="flip-card-answer"  value=""> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-buttons container ">
+                <button id="btn-next-question" class="btn btn-success container">Next Question</button>
+            </div>
+        </div>
+    </div>
+
+    {% include 'interface/footer.html' %}
+
+    <script defer src="{% static 'js/flip_logic.js' %}"></script>
+
+    <script>
+        const questions = JSON.parse('{{ questions | escapejs }}');
+    </script>
+</body>
+</html>
