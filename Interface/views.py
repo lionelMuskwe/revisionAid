@@ -8,7 +8,7 @@ from Question.models import Question, Subject, Topic
 # Create your views here.
 
 def homepage(request):
-    return render(request, "Interface/homepage.html")
+    return render(request, "interface/homepage.html")
 
 
 def subjectsPage(request):
@@ -20,10 +20,10 @@ def subjectsPage(request):
     }
 
     print(f"Context ", context["subjects"])
-    return render(request, "Interface/subjects.html", context)
+    return render(request, "interface/subjects.html", context)
 
 def aboutPage(request):
-    return render(request, "Interface/about.html")
+    return render(request, "interface/about.html")
 
 def topicsPage(request, pk):
 
@@ -40,7 +40,7 @@ def topicsPage(request, pk):
     print("Topics = ", context["topics"])
 
     # return render(request, "Interface/topics.html", context)
-    return render(request, "Interface/topics.html", context)
+    return render(request, "interface/topics.html", context)
 
 def getQuestions(request, pk):
 
@@ -55,7 +55,7 @@ def getQuestions(request, pk):
 
 
     # return render(request, "Interface/topics.html", context)
-    return render(request, "Interface/old-interface.html", context)
+    return render(request, "interface/old-interface.html", context)
 
 # Indiviudal functions
 def convertArrayToJson(array):
