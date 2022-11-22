@@ -12,7 +12,7 @@ class Subject(models.Model):
 
 class Topic(models.Model):
     name = models.CharField(max_length=100)
-    description = models.CharField(max_length=100)
+    description = models.CharField(max_length=200)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -20,9 +20,9 @@ class Topic(models.Model):
 
 
 class Question(models.Model):
-    question = models.CharField(max_length=100)
-    answer = models.CharField(max_length=100)
-    explanation = models.CharField(max_length=100, null=True, blank=True)
+    question = models.CharField(max_length=300)
+    answer = models.CharField(max_length=300)
+    explanation = models.CharField(max_length=300, null=True, blank=True)
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
 
 
